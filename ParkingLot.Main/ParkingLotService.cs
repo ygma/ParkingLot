@@ -6,27 +6,19 @@ namespace ParkingLot.Main
 {
     public static class ParkingLotService
     {
-        private static readonly List<Car> AllCars = new List<Car>();
+        private static readonly List<Car> ParkedCars = new List<Car>();
 
-        public static void Park(Car car)
+        public static int Park(Car car)
         {
-            AllCars.Add(car);
+            ParkedCars.Add(car);
+            return car.GetHashCode();
         }
 
-        public static string Take(Car car)
+        public static Car Pick(int ticket)
         {
-            if (car == null) throw new InvalidDataException();
-
-            if (!IsInParkingLot(car)) return ResultMessage.NotFoundInParkingLot;
-
-            AllCars.Remove(car);
-
-            return ResultMessage.TakeSuccess;
-        }
-
-        private static bool IsInParkingLot(Car car)
-        {
-            return AllCars.Any(c => c.Equals(car));
+            var car = ParkedCars.SingleOrDefault(c => c.GetHashCode() == ticket);
+            ParkedCars.Remove(car);
+            return car;
         }
     }
 }

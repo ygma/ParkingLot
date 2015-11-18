@@ -7,56 +7,47 @@ namespace ParkingLot.Test
     public class ParkingLotFacts
     {
         [Fact]
-        public void should_return_success_message_when_park_and_take_car()
+        public void should_pick_the_parked_car_when_park_a_car()
         {
             var car = new Car();
 
-            ParkingLotService.Park(car);
-            var actual = ParkingLotService.Take(car);
+            var ticket = ParkingLotService.Park(car);
 
-            Assert.Equal(ResultMessage.TakeSuccess, actual);
+            Assert.Equal(car, ParkingLotService.Pick(ticket));
         }
 
         [Fact]
-        public void should_return_not_found_message_when_try_to_take_car_which_not_in_parking_lot()
+        public void should_not_pick_a_car_from_empty_parking_lot_when_use_invalid_ticket()
         {
-            var carNotInParkingLot = new Car();
+            var invalidTicket = 1;
 
-            var actual = ParkingLotService.Take(carNotInParkingLot);
+            var actual = ParkingLotService.Pick(invalidTicket);
 
-            Assert.Equal(ResultMessage.NotFoundInParkingLot, actual);
+            Assert.Equal(null, actual);
         }
 
         [Fact]
-        public void should_return_not_found_message_when_try_to_take_another_one_after_park_one_car()
+        public void should_not_pick_a_car_when_use_invalid_ticket_and_exist_car_in_parking_lot()
         {
             var car1 = new Car();
-            var car2 = new Car();
-
             ParkingLotService.Park(car1);
-            var actual = ParkingLotService.Take(car2);
+            var invalidTicket = 1;
 
-            Assert.Equal(ResultMessage.NotFoundInParkingLot, actual);
+            var actual = ParkingLotService.Pick(invalidTicket);
+
+            Assert.Equal(null, actual);
         }
 
         [Fact]
-        public void should_throw_invalid_data_exception_when_try_to_take_car_using_invalid_data()
-        {
-            Assert.ThrowsDelegate takeDelegate = () => ParkingLotService.Take(null);
-
-            Assert.Throws(typeof (InvalidDataException), takeDelegate);
-        }
-
-        [Fact]
-        public void should_return_success_first_then_return_not_found_when_try_to_take_car_twice()
+        public void should_return_success_first_then_return_not_found_when_try_to_pick_car_twice()
         {
             var car = new Car();
-            ParkingLotService.Park(car);
-            ParkingLotService.Take(car);
+            var ticket = ParkingLotService.Park(car);
+            ParkingLotService.Pick(ticket);
 
-            var secondResult = ParkingLotService.Take(car);
+            var secondResult = ParkingLotService.Pick(ticket);
 
-            Assert.Equal(ResultMessage.NotFoundInParkingLot, secondResult);
+            Assert.Equal(null, secondResult);
         }
     }
 }
