@@ -1,8 +1,7 @@
-﻿using System.IO;
-using ParkingLot.Main;
+﻿using ParkingLotManagement.Main;
 using Xunit;
 
-namespace ParkingLot.Test
+namespace ParkingLotManagement.Test
 {
     public class ParkingLotFacts
     {

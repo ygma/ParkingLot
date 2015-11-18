@@ -1,18 +1,11 @@
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 
-namespace ParkingLot.Main
+namespace ParkingLotManagement.Main
 {
     public static class ParkingLotService
     {
-        private static readonly List<Car> ParkedCars = new List<Car>();
-
-        public static int Park(Car car)
-        {
-            ParkedCars.Add(car);
-            return car.GetHashCode();
-        }
+        public static readonly List<Car> ParkedCars = new List<Car>();
 
         public static Car Pick(int ticket)
         {
@@ -20,5 +13,15 @@ namespace ParkingLot.Main
             ParkedCars.Remove(car);
             return car;
         }
+
+        public static int Park(Car car)
+        {
+            ParkingLotService.ParkedCars.Add(car);
+            return car.GetHashCode();
+        }
+    }
+
+    public class ParkingLot
+    {
     }
 }

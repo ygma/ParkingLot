@@ -7,8 +7,8 @@
     <ProjectGuid>{16D9D3E2-48C2-4F07-AD9C-4E986B1137A1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ParkingLot.Main</RootNamespace>
-    <AssemblyName>ParkingLot.Main</AssemblyName>
+    <RootNamespace>ParkingLotManagement.Main</RootNamespace>
+    <AssemblyName>ParkingLotManagement.Main</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Car.cs" />
+    <Compile Include="ParkingBoy.cs" />
     <Compile Include="ParkingLotService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResultMessage.cs" />

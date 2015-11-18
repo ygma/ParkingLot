@@ -7,8 +7,8 @@
     <ProjectGuid>{D9C2BA67-8427-491B-A375-E69850145962}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ParkingLot.Test</RootNamespace>
-    <AssemblyName>ParkingLot.Test</AssemblyName>
+    <RootNamespace>ParkingLotManagement.Test</RootNamespace>
+    <AssemblyName>ParkingLotManagement.Test</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -45,16 +45,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ParkingBoyFacts.cs" />
     <Compile Include="ParkingLotFacts.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ParkingLot.Main\ParkingLot.Main.csproj">
+    <ProjectReference Include="..\ParkingLot.Main\ParkingLotManagement.Main.csproj">
       <Project>{16D9D3E2-48C2-4F07-AD9C-4E986B1137A1}</Project>
-      <Name>ParkingLot.Main</Name>
+      <Name>ParkingLotManagement.Main</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

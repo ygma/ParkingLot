@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingLot.Test", "ParkingLot.Test\ParkingLot.Test.csproj", "{D9C2BA67-8427-491B-A375-E69850145962}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingLotManagement.Test", "ParkingLot.Test\ParkingLotManagement.Test.csproj", "{D9C2BA67-8427-491B-A375-E69850145962}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingLot.Main", "ParkingLot.Main\ParkingLot.Main.csproj", "{16D9D3E2-48C2-4F07-AD9C-4E986B1137A1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingLotManagement.Main", "ParkingLot.Main\ParkingLotManagement.Main.csproj", "{16D9D3E2-48C2-4F07-AD9C-4E986B1137A1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{C203A8E4-8AC4-475B-BE41-717A45747ACC}"
 	ProjectSection(SolutionItems) = preProject

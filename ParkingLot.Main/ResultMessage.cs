@@ -1,4 +1,4 @@
-﻿namespace ParkingLot.Main
+﻿namespace ParkingLotManagement.Main
 {
     public class ResultMessage
     {
