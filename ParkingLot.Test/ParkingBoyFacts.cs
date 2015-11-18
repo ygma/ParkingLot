@@ -9,20 +9,22 @@ namespace ParkingLotManagement.Test
         public void should_park_car_by_parking_boy()
         {
             var car = new Car();
-            var parkingBoy = new ParkingBoy();
+            var parkingLot = new ParkingLot();
+            var parkingBoy = new ParkingBoy(parkingLot);
 
             var ticket = parkingBoy.Park(car);
 
-            Assert.Equal(car, ParkingLotService.Pick(ticket));
+            Assert.Equal(car, parkingLot.Pick(ticket));
         }
 
         [Fact]
         public void should_be_able_to_pick_car_by_parking_boy()
         {
             var car = new Car();
-            var parkingBoy = new ParkingBoy();
+            var parkingLot = new ParkingLot();
+            var parkingBoy = new ParkingBoy(parkingLot);
 
-            var ticket = ParkingLotService.Park(car);
+            var ticket = parkingLot.Park(car);
 
             Assert.Equal(car, parkingBoy.Pick(ticket));
         }
@@ -30,7 +32,10 @@ namespace ParkingLotManagement.Test
         [Fact]
         public void should_park_car_to_parking_lot_1_if_parking_lot_1_is_not_full()
         {
-            
+            var car = new Car();
+            var parkingLot1 = new ParkingLot();
+            var parkingLot2 = new ParkingLot();
+
         }
     }
 }
