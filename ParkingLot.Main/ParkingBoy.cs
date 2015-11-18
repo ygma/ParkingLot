@@ -1,30 +1,32 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ParkingLotManagement.Main
 {
     public class ParkingBoy
     {
-        private ParkingLot parkingLot;
+        private readonly List<ParkingLot> parkingLots;
 
-        public ParkingBoy(ParkingLot parkingLot)
+        public ParkingBoy(List<ParkingLot> parkingLots)
         {
-            var parkingLots = new List<ParkingLot>(){parkingLot};
-            this.parkingLot = parkingLot;
+            this.parkingLots = parkingLots;
         }
 
         public int Park(Car car)
         {
-            return parkingLot.Park(car);
+            var position = parkingLots.FirstOrDefault(p => !p.IsFull());
+            if (position == null)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+            
+            return position.Park(car);
         }
 
         public Car Pick(int ticket)
         {
-            return parkingLot.Pick(ticket);
-        }
-
-        public void AddManagedParkingLot(ParkingLot parkingLot)
-        {
-            this.parkingLot = parkingLot;
+            return parkingLots[0].Pick(ticket);
         }
     }
 }
