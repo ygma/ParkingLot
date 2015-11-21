@@ -55,15 +55,12 @@ namespace ParkingLotManagement.Test
         }
 
         [Fact]
-        public void should_throw_expection_if_try_to_park_car_to_full_parking_lot()
+        public void should_get_null_if_try_to_park_car_to_full_parking_lot()
         {
-            var parkingLot = new ParkingLot(2);
-            parkingLot.Park(new Car());
+            var parkingLot = new ParkingLot(1);
             parkingLot.Park(new Car());
 
-            Assert.True(parkingLot.IsFull());
-
-            Assert.Throws(typeof (ArgumentOutOfRangeException), () => parkingLot.Park(new Car()));
+            Assert.Null(parkingLot.Park(new Car()));
         }
     }
 }

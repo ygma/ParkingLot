@@ -13,20 +13,27 @@ namespace ParkingLotManagement.Main
             this.parkingLots = parkingLots;
         }
 
-        public int Park(Car car)
+        public int? Park(Car car)
         {
-            var position = parkingLots.FirstOrDefault(p => !p.IsFull());
-            if (position == null)
+            foreach (var parkingLot in parkingLots)
             {
-                throw new ArgumentOutOfRangeException();
+                var ticket = parkingLot.Park(car);
+
+                if (ticket.HasValue) return ticket;
             }
-            
-            return position.Park(car);
+
+            return null;
         }
 
-        public Car Pick(int ticket)
+        public Car Pick(int? ticket)
         {
-            return parkingLots[0].Pick(ticket);
+            foreach (var item in parkingLots)
+            {
+                var car = item.Pick(ticket);
+
+                if (car != null) return car;
+            }
+            return null;
         }
     }
 }

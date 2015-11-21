@@ -14,25 +14,25 @@ namespace ParkingLotManagement.Main
             this.capacity = capacity;
         }
 
-        public int Park(Car car)
+        public int? Park(Car car)
         {
             if (IsFull())
             {
-                throw new ArgumentOutOfRangeException();
+                return null;
             }
 
             parkedCars.Add(car);
             return car.GetHashCode();
         }
 
-        public Car Pick(int ticket)
+        public Car Pick(int? ticket)
         {
-            var car = parkedCars.SingleOrDefault<Car>(c => c.GetHashCode() == ticket);
+            var car = parkedCars.FirstOrDefault(c => c.GetHashCode() == ticket);
             parkedCars.Remove(car);
             return car;
         }
 
-        public bool IsFull()
+        private bool IsFull()
         {
             return parkedCars.Count >= capacity;
         }

@@ -79,7 +79,7 @@ namespace ParkingLotManagement.Test
         }
 
         [Fact]
-        public void should_throw_exception_if_try_to_park_a_car_when_all_parking_lots_are_full()
+        public void should_get_null_if_try_to_park_a_car_when_all_parking_lots_are_full()
         {
             var parkingLot1 = new ParkingLot(1);
             var parkingLot2 = new ParkingLot(1);
@@ -87,7 +87,19 @@ namespace ParkingLotManagement.Test
             parkingBoy.Park(new Car());
             parkingBoy.Park(new Car());
 
-            Assert.Throws(typeof(ArgumentOutOfRangeException), () => parkingBoy.Park(new Car()));
+            Assert.Null(parkingBoy.Park(new Car()));
+        }
+
+        [Fact]
+        public void should_pick_car_from_parking_lot_2_by_parking_boy_if_the_car_is_in_parking_lot_2()
+        {
+            var parkingLot1 = new ParkingLot(1);
+            var parkingLot2 = new ParkingLot(1);
+            var parkingBoy = new ParkingBoy(new List<ParkingLot>() { parkingLot1, parkingLot2 });
+            var car = new Car();
+            var ticket = parkingLot2.Park(car);
+
+            Assert.Equal(car, parkingBoy.Pick(ticket));
         }
     }
 }
