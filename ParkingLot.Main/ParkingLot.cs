@@ -9,6 +9,11 @@ namespace ParkingLotManagement.Main
         private readonly int capacity;
         private readonly List<Car> parkedCars = new List<Car>();
 
+        public int AvaliableCount
+        {
+            get { return capacity - parkedCars.Count; }
+        }
+
         public ParkingLot(int capacity)
         {
             this.capacity = capacity;
