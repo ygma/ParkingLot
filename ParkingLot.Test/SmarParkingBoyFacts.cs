@@ -10,7 +10,7 @@ namespace ParkingLotManagement.Test
         public void should_park_car_by_smart_parking_boy()
         {
             var parkingLot = new ParkingLot(1);
-            var smartParkingBoy = new SmartParkingBoy(new List<ParkingLot>(){parkingLot});
+            var smartParkingBoy = ParkingBoyFactory.CreateSmartParkingBoy(new List<ParkingLot>(){parkingLot});
             var car = new Car();
 
             var ticket = smartParkingBoy.Park(car);
@@ -24,7 +24,7 @@ namespace ParkingLotManagement.Test
             var parkingLot1 = new ParkingLot(2);
             var parkingLot2 = new ParkingLot(1);
             var car = new Car();
-            var smartParkingBoy = new SmartParkingBoy(new List<ParkingLot> { parkingLot1, parkingLot2 });
+            var smartParkingBoy = ParkingBoyFactory.CreateSmartParkingBoy(new List<ParkingLot> { parkingLot1, parkingLot2 });
 
             var ticket = smartParkingBoy.Park(car);
 
@@ -38,7 +38,7 @@ namespace ParkingLotManagement.Test
             var parkingLot1 = new ParkingLot(1);
             var parkingLot2 = new ParkingLot(2);
             var car = new Car();
-            var smartParkingBoy = new SmartParkingBoy(new List<ParkingLot> { parkingLot1, parkingLot2 });
+            var smartParkingBoy = ParkingBoyFactory.CreateSmartParkingBoy(new List<ParkingLot> { parkingLot1, parkingLot2 });
 
             var ticket = smartParkingBoy.Park(car);
 
@@ -51,7 +51,7 @@ namespace ParkingLotManagement.Test
         {
             var parkingLot1 = new ParkingLot(1);
             var parkingLot2 = new ParkingLot(1);
-            var smartParkingBoy = new SmartParkingBoy(new List<ParkingLot> {parkingLot1, parkingLot2});
+            var smartParkingBoy = ParkingBoyFactory.CreateSmartParkingBoy(new List<ParkingLot> {parkingLot1, parkingLot2});
             var car = new Car();
 
             var ticket = smartParkingBoy.Park(car);
@@ -66,7 +66,7 @@ namespace ParkingLotManagement.Test
             parkingLot1.Park(new Car());
             var parkingLot2 = new ParkingLot(1);
             parkingLot2.Park(new Car());
-            var smartParkingBoy = new SmartParkingBoy(new List<ParkingLot> { parkingLot1, parkingLot2 });
+            var smartParkingBoy = ParkingBoyFactory.CreateSmartParkingBoy(new List<ParkingLot> { parkingLot1, parkingLot2 });
             var car = new Car();
 
             var ticket = smartParkingBoy.Park(car);
@@ -80,7 +80,7 @@ namespace ParkingLotManagement.Test
         {
             var car = new Car();
             var parkingLot = new ParkingLot(1);
-            var parkingBoy = new SmartParkingBoy(new List<ParkingLot>() { parkingLot });
+            var parkingBoy = ParkingBoyFactory.CreateSmartParkingBoy(new List<ParkingLot>() { parkingLot });
 
             var ticket = parkingLot.Park(car);
 
@@ -92,7 +92,7 @@ namespace ParkingLotManagement.Test
         {
             var parkingLot1 = new ParkingLot(1);
             var parkingLot2 = new ParkingLot(1);
-            var parkingBoy = new SmartParkingBoy(new List<ParkingLot>() { parkingLot1, parkingLot2 });
+            var parkingBoy = ParkingBoyFactory.CreateSmartParkingBoy(new List<ParkingLot>() { parkingLot1, parkingLot2 });
             var car = new Car();
 
             var ticket = parkingLot2.Park(car);

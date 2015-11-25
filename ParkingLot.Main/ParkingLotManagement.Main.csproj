@@ -40,13 +40,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Car.cs" />
+    <Compile Include="IParkStrategy.cs" />
     <Compile Include="ParkingBoy.cs" />
-    <Compile Include="ParkingBoyBase.cs" />
+    <Compile Include="ParkingBoyFactory.cs" />
     <Compile Include="ParkingLot.cs" />
+    <Compile Include="ParkingStrategy\MaxAvailiableCountStrategy.cs" />
+    <Compile Include="ParkingStrategy\MaxFreeSpaceRateStrategy.cs" />
+    <Compile Include="ParkingStrategy\SequenceParkStrategy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ResultMessage.cs" />
-    <Compile Include="SmartParkingBoy.cs" />
-    <Compile Include="SuperParkingBoy.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

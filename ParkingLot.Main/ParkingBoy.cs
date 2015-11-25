@@ -1,24 +1,33 @@
-﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using ParkingLotManagement.Main.ParkingStrategy;
 
 namespace ParkingLotManagement.Main
 {
-    public class ParkingBoy : ParkingBoyBase
+    public class ParkingBoy
     {
-        public ParkingBoy(List<ParkingLot> parkingLots) : base(parkingLots)
+        private readonly List<ParkingLot> parkingLots;
+        private readonly IParkStrategy parkingStrategy;
+
+
+        public ParkingBoy(List<ParkingLot> parkingLots, IParkStrategy parkingStrategy)
         {
+            this.parkingLots = parkingLots;
+            this.parkingStrategy = parkingStrategy;       
         }
 
         public int? Park(Car car)
         {
-            foreach (var parkingLot in parkingLots)
+            return parkingStrategy.Park(car);
+        }
+
+        public Car Pick(int? ticket)
+        {
+            foreach (var item in parkingLots)
             {
-                var ticket = parkingLot.Park(car);
+                var car = item.Pick(ticket);
 
-                if (ticket.HasValue) return ticket;
+                if (car != null) return car;
             }
-
             return null;
         }
     }

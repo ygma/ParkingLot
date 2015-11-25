@@ -10,7 +10,7 @@ namespace ParkingLotManagement.Test
         public void should_park_car_when_there_is_one_parking_lot()
         {
             var parkingLot = new ParkingLot(1);
-            var superParkingBoy = new SuperParkingBoy(new List<ParkingLot>{parkingLot});
+            var superParkingBoy = ParkingBoyFactory.CreateSuperParkingBoy(new List<ParkingLot>{parkingLot});
             var car = new Car();
 
             var ticket = superParkingBoy.Park(car);
@@ -24,7 +24,7 @@ namespace ParkingLotManagement.Test
             var lowerFreeRateParkingLot = new ParkingLot(2);
             lowerFreeRateParkingLot.Park(new Car());
             var higherFreeRateParkingLot = new ParkingLot(2);
-            var superParkingBoy = new SuperParkingBoy(new List<ParkingLot> { lowerFreeRateParkingLot, higherFreeRateParkingLot });
+            var superParkingBoy = ParkingBoyFactory.CreateSuperParkingBoy(new List<ParkingLot> { lowerFreeRateParkingLot, higherFreeRateParkingLot });
             var car = new Car();
 
             var ticket = superParkingBoy.Park(car);
@@ -38,7 +38,7 @@ namespace ParkingLotManagement.Test
         {
             var parkingLot1 = new ParkingLot(1);
             var parkingLot2 = new ParkingLot(1);
-            var superParkingBoy = new SuperParkingBoy(new List<ParkingLot> { parkingLot1, parkingLot2 });
+            var superParkingBoy = ParkingBoyFactory.CreateSuperParkingBoy(new List<ParkingLot> { parkingLot1, parkingLot2 });
             var car = new Car();
 
             var ticket = superParkingBoy.Park(car);
@@ -51,7 +51,7 @@ namespace ParkingLotManagement.Test
         {
             var parkingLot = new ParkingLot(1);
             parkingLot.Park(new Car());
-            var superParkingBoy = new SuperParkingBoy(new List<ParkingLot> { parkingLot });
+            var superParkingBoy = ParkingBoyFactory.CreateSuperParkingBoy(new List<ParkingLot> { parkingLot });
             var car = new Car();
 
             var ticket = superParkingBoy.Park(car);
@@ -63,7 +63,7 @@ namespace ParkingLotManagement.Test
         public void should_decrease_free_space_rate_when_park_car()
         {
             var parkingLot = new ParkingLot(2);
-            var superParkingBoy = new SuperParkingBoy(new List<ParkingLot>{parkingLot});
+            var superParkingBoy = ParkingBoyFactory.CreateSuperParkingBoy(new List<ParkingLot>{parkingLot});
             var freeSpaceRateBeforePark = parkingLot.FreeSpaceRate;
 
             superParkingBoy.Park(new Car());
@@ -76,7 +76,7 @@ namespace ParkingLotManagement.Test
         public void should_increase_free_space_rate_when_pick_car()
         {
             var parkingLot = new ParkingLot(2);
-            var superParkingBoy = new SuperParkingBoy(new List<ParkingLot> { parkingLot });
+            var superParkingBoy = ParkingBoyFactory.CreateSuperParkingBoy(new List<ParkingLot> { parkingLot });
             var ticket = superParkingBoy.Park(new Car());
             var freeSpaceRateBeforePick = parkingLot.FreeSpaceRate;
 
@@ -91,7 +91,7 @@ namespace ParkingLotManagement.Test
         {
             var car = new Car();
             var parkingLot = new ParkingLot(1);
-            var parkingBoy = new SuperParkingBoy(new List<ParkingLot>() { parkingLot });
+            var parkingBoy = ParkingBoyFactory.CreateSuperParkingBoy(new List<ParkingLot>() { parkingLot });
 
             var ticket = parkingLot.Park(car);
 
@@ -103,7 +103,7 @@ namespace ParkingLotManagement.Test
         {
             var parkingLot1 = new ParkingLot(1);
             var parkingLot2 = new ParkingLot(1);
-            var parkingBoy = new SuperParkingBoy(new List<ParkingLot>() { parkingLot1, parkingLot2 });
+            var parkingBoy = ParkingBoyFactory.CreateSuperParkingBoy(new List<ParkingLot>() { parkingLot1, parkingLot2 });
             var car = new Car();
 
             var ticket = parkingLot2.Park(car);
