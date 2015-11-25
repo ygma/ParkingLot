@@ -4,9 +4,9 @@ using System.Linq;
 
 namespace ParkingLotManagement.Main
 {
-    public class CommonParkingBoy : ParkingBoyBase
+    public class ParkingBoy : ParkingBoyBase
     {
-        public CommonParkingBoy(List<ParkingLot> parkingLots) : base(parkingLots)
+        public ParkingBoy(List<ParkingLot> parkingLots) : base(parkingLots)
         {
         }
 

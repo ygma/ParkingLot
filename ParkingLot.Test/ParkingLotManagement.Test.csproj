@@ -45,10 +45,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommonParkingBoyFacts.cs" />
+    <Compile Include="ParkingBoyFacts.cs" />
     <Compile Include="ParkingLotFacts.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SmarParkingBoyFacts.cs" />
+    <Compile Include="SuperParkingBoyFacts.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config">

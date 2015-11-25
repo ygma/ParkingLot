@@ -5,14 +5,14 @@ using Xunit;
 
 namespace ParkingLotManagement.Test
 {
-    public class CommonParkingBoyFacts
+    public class ParkingBoyFacts
     {
         [Fact]
         public void should_park_car_by_common_parking_boy()
         {
             var car = new Car();
             var parkingLot = new ParkingLot(1);
-            var parkingBoy = new CommonParkingBoy(new List<ParkingLot>(){parkingLot});
+            var parkingBoy = new ParkingBoy(new List<ParkingLot>(){parkingLot});
 
             var ticket = parkingBoy.Park(car);
 
@@ -24,7 +24,7 @@ namespace ParkingLotManagement.Test
         {
             var car = new Car();
             var parkingLot = new ParkingLot(1);
-            var parkingBoy = new CommonParkingBoy(new List<ParkingLot>(){parkingLot});
+            var parkingBoy = new ParkingBoy(new List<ParkingLot>(){parkingLot});
 
             var ticket = parkingLot.Park(car);
 
@@ -37,7 +37,7 @@ namespace ParkingLotManagement.Test
             var car = new Car();
             var parkingLot1 = new ParkingLot(1);
             var parkingLot2 = new ParkingLot(1);
-            var parkingBoy = new CommonParkingBoy(new List<ParkingLot>(){parkingLot1, parkingLot2});
+            var parkingBoy = new ParkingBoy(new List<ParkingLot>(){parkingLot1, parkingLot2});
 
             var ticket = parkingBoy.Park(car);
 
@@ -51,7 +51,7 @@ namespace ParkingLotManagement.Test
             var car = new Car();
             var parkingLot1 = new ParkingLot(1);
             var parkingLot2 = new ParkingLot(1);
-            var parkingBoy = new CommonParkingBoy(new List<ParkingLot>() { parkingLot1, parkingLot2 });
+            var parkingBoy = new ParkingBoy(new List<ParkingLot>() { parkingLot1, parkingLot2 });
             parkingLot1.Park(new Car());
 
             var ticket = parkingBoy.Park(car);
@@ -67,7 +67,7 @@ namespace ParkingLotManagement.Test
             var car2 = new Car();
             var parkingLot1 = new ParkingLot(1);
             var parkingLot2 = new ParkingLot(1);
-            var parkingBoy = new CommonParkingBoy(new List<ParkingLot>() { parkingLot1, parkingLot2 });
+            var parkingBoy = new ParkingBoy(new List<ParkingLot>() { parkingLot1, parkingLot2 });
             
             var ticket1 = parkingBoy.Park(car1);
             var ticket2 = parkingBoy.Park(car2);
@@ -83,7 +83,7 @@ namespace ParkingLotManagement.Test
         {
             var parkingLot1 = new ParkingLot(1);
             var parkingLot2 = new ParkingLot(1);
-            var parkingBoy = new CommonParkingBoy(new List<ParkingLot>() { parkingLot1, parkingLot2 });
+            var parkingBoy = new ParkingBoy(new List<ParkingLot>() { parkingLot1, parkingLot2 });
             parkingBoy.Park(new Car());
             parkingBoy.Park(new Car());
 
@@ -95,7 +95,7 @@ namespace ParkingLotManagement.Test
         {
             var parkingLot1 = new ParkingLot(1);
             var parkingLot2 = new ParkingLot(1);
-            var parkingBoy = new CommonParkingBoy(new List<ParkingLot>() { parkingLot1, parkingLot2 });
+            var parkingBoy = new ParkingBoy(new List<ParkingLot>() { parkingLot1, parkingLot2 });
             var car = new Car();
             var ticket = parkingLot2.Park(car);
 

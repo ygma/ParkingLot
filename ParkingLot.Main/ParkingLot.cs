@@ -14,6 +14,11 @@ namespace ParkingLotManagement.Main
             get { return capacity - parkedCars.Count; }
         }
 
+        public float FreeSpaceRate
+        {
+            get { return (float)AvaliableCount / capacity; }
+        }
+
         public ParkingLot(int capacity)
         {
             this.capacity = capacity;
