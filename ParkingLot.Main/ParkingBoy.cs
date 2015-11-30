@@ -1,18 +1,16 @@
 using System.Collections.Generic;
-using ParkingLotManagement.Main.ParkingStrategy;
 
 namespace ParkingLotManagement.Main
 {
     public class ParkingBoy
     {
-        private readonly List<ParkingLot> parkingLots;
         private readonly IParkStrategy parkingStrategy;
-
+        private readonly PickService pickService;
 
         public ParkingBoy(List<ParkingLot> parkingLots, IParkStrategy parkingStrategy)
         {
-            this.parkingLots = parkingLots;
-            this.parkingStrategy = parkingStrategy;       
+            this.parkingStrategy = parkingStrategy;
+            pickService = new PickService(parkingLots);     
         }
 
         public int? Park(Car car)
@@ -22,13 +20,7 @@ namespace ParkingLotManagement.Main
 
         public Car Pick(int? ticket)
         {
-            foreach (var item in parkingLots)
-            {
-                var car = item.Pick(ticket);
-
-                if (car != null) return car;
-            }
-            return null;
+            return pickService.Pick(ticket);
         }
     }
 }

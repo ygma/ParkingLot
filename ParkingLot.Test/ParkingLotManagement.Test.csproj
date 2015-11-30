@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="ParkingBoyFacts.cs" />
     <Compile Include="ParkingLotFacts.cs" />
+    <Compile Include="ParkingManagerFacts.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SmarParkingBoyFacts.cs" />
     <Compile Include="SuperParkingBoyFacts.cs" />

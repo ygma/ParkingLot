@@ -44,9 +44,11 @@
     <Compile Include="ParkingBoy.cs" />
     <Compile Include="ParkingBoyFactory.cs" />
     <Compile Include="ParkingLot.cs" />
+    <Compile Include="ParkingManager.cs" />
     <Compile Include="ParkingStrategy\MaxAvailiableCountStrategy.cs" />
     <Compile Include="ParkingStrategy\MaxFreeSpaceRateStrategy.cs" />
     <Compile Include="ParkingStrategy\SequenceParkStrategy.cs" />
+    <Compile Include="PickService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
