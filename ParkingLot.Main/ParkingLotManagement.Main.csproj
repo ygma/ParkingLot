@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Car.cs" />
+    <Compile Include="IParkable.cs" />
     <Compile Include="IParkStrategy.cs" />
     <Compile Include="ParkingBoy.cs" />
     <Compile Include="ParkingBoyFactory.cs" />

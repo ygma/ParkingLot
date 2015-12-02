@@ -7,17 +7,17 @@ namespace ParkingLotManagement.Main
     {
         public static ParkingBoy CreateSuperParkingBoy(List<ParkingLot> parkingLots)
         {
-            return new ParkingBoy(parkingLots, new MaxFreeSpaceRateStrategy(parkingLots));
+            return new ParkingBoy(parkingLots, new MaxFreeSpaceRateStrategy());
         }
 
         public static ParkingBoy CreateSmartParkingBoy(List<ParkingLot> parkingLots)
         {
-            return new ParkingBoy(parkingLots, new MaxAvailiableCountStrategy(parkingLots));
+            return new ParkingBoy(parkingLots, new MaxAvailiableCountStrategy());
         }
 
         public static ParkingBoy CreateParkingBoy(List<ParkingLot> parkingLots)
         {
-            return new ParkingBoy(parkingLots, new SequenceParkStrategy(parkingLots));
+            return new ParkingBoy(parkingLots, new SequenceParkStrategy());
         }
     }
 }

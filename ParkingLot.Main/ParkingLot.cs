@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace ParkingLotManagement.Main
 {
-    public class ParkingLot
+    public class ParkingLot : IParkable
     {
         private readonly int capacity;
         private readonly List<Car> parkedCars = new List<Car>();

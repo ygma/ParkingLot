@@ -4,16 +4,9 @@ namespace ParkingLotManagement.Main.ParkingStrategy
 {
     public class SequenceParkStrategy : IParkStrategy
     {
-        private readonly List<ParkingLot> parkingLots;
-
-        public SequenceParkStrategy(List<ParkingLot> parkingLots)
+        public override int? Park(Car car, List<ParkingLot> lots)
         {
-            this.parkingLots = parkingLots;
-        }
-
-        public int? Park(Car car)
-        {
-            foreach (var parkingLot in parkingLots)
+            foreach (var parkingLot in lots)
             {
                 var ticket = parkingLot.Park(car);
 

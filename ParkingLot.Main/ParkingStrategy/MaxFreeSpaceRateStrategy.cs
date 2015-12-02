@@ -5,16 +5,9 @@ namespace ParkingLotManagement.Main.ParkingStrategy
 {
     public class MaxFreeSpaceRateStrategy : IParkStrategy
     {
-        private readonly List<ParkingLot> parkingLots;
-
-        public MaxFreeSpaceRateStrategy(List<ParkingLot> parkingLots)
+        public override int? Park(Car car, List<ParkingLot> lots)
         {
-            this.parkingLots = parkingLots;
-        }
-
-        public int? Park(Car car)
-        {
-            return parkingLots.OrderByDescending(l => l.FreeSpaceRate).First().Park(car);
+            return lots.OrderByDescending(l => l.FreeSpaceRate).First().Park(car);
         }
     }
 }

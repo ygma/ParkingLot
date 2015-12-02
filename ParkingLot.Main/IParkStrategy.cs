@@ -1,7 +1,9 @@
+using System.Collections.Generic;
+
 namespace ParkingLotManagement.Main
 {
-    public interface IParkStrategy
+    public abstract class IParkStrategy
     {
-        int? Park(Car car);
+        public abstract int? Park(Car car, List<ParkingLot> lots);
     }
 }
